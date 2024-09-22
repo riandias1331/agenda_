@@ -1,0 +1,51 @@
+<%- include('includes/head')%>
+<%- include('includes/nav')%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 " style="margin-top: 40px;">
+            <h1 class="display-1 text-center ">Agenda</h1>
+            <p class="text-center lead">crie ou edite seus contatos abaixo.</p>
+
+
+            <%- include('includes/messages')%>
+
+            <% if(contato._id){ %>
+              <form action="/contato/edit/<%= contato._id%>" method="post">
+            <% } else {%>
+              <form action="/contato/register" method="post">
+            <% } %>
+                <input type="hidden" name="_csrf" value= <%= csrfToken %>>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nome</label>
+                  <input type="text" name="nome" class="form-control" value="<%= contato.nome %>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">SobreNome</label>
+                  <input type="text" name="sobrenome" class="form-control" value="<%= contato.sobrenome %>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">email</label>
+                  <input type="email" name="email" class="form-control" value="<%= contato.email %>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">telefone</label>
+                  <input type="tel" name="telefone" class="form-control" value="<%= contato.telefone %>">
+                </div>
+               
+               
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;cursor: pointer;">Save</button>
+              </form>
+
+
+
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+<%- include('includes/footer')%>
+   
+
+

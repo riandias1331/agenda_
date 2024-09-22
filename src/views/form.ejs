@@ -1,0 +1,19 @@
+<%- include ('includes/head'); %>
+<body>
+
+    
+    <form method="post" action="">
+
+        <%= titulo %> <br>
+
+         <!-- <%= csrfToken%>toda atualizaçao um novo codigo = segurança -->
+
+        <!-- <h1>Login</h1> -->
+        <input type="hidden" name="_csrf" value="iDMMEqcu-pv_ODuLlQj92tcbODl_uH-COLNI">
+        <input type="text" name="user" placeholder="User"><br>
+        <input type="password" name="password"  placeholder="password"><br>
+        <button>Send</button>
+    </form>
+    
+</body>
+</html>
